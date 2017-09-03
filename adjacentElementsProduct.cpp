@@ -7,6 +7,7 @@
 // 
 // 7 and 3 produce the largest product.
 // 
+// C++ Solution:
 
 int adjacentElementsProduct(std::vector<int> inputArray) {
 
