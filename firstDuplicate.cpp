@@ -24,12 +24,10 @@ int firstDuplicate(std::vector<int> a) {
     // iterate through array and test for duplicates:
     for (int i = 0; i < a.size(); i++) {
         int currentNum = a[i];
-        cout << currentNum;
         
         // inner loop:
         for (int n = i + 1; n < a.size(); n++) {
             int nextNum = a[n];
-            cout << nextNum;
             
             // check for match:
             if ( (nextNum == currentNum) && (n < numHops) ) {
