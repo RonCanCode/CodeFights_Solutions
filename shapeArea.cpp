@@ -27,6 +27,7 @@ int shapeArea(int n) {
         area = 1;
         return area;
     }
+    // Recursive calls:
     else {
         area = shapeArea(n - 1) + (n*2) + ((n-2)*2);
         return area;
