@@ -15,6 +15,11 @@
 // 
 // For a = [2, 4, 3, 5, 1], the output should be
 // firstDuplicate(a) = -1.
+//
+// C++ Solutions:
+
+
+// Slow "naive"/"wrong" solution:
 
 int firstDuplicate(std::vector<int> a) {
     
@@ -39,4 +44,37 @@ int firstDuplicate(std::vector<int> a) {
 
     return duplicate;
 }
+
+
+
+// Faster solution, O(n) time O(1) space:
+
+int firstDuplicate(std::vector<int> a) {
+    
+    // return -1 if none found:
+    int duplicate = -1;
+    cout << a.size();
+    
+    // iterate through array and test for duplicates:
+    for (int i = 0; i < a.size(); i++) {
+        
+        // hold current number and it's abs val:
+        int currentNum = a[i];
+        int absCurr = abs(currentNum) - 1;
+        
+        // check if the slot indexed by currentNum is positive,
+        // if so, it hasn't been seen, so flip it:
+        if ( a[absCurr] > 0) {
+            a[absCurr] = a[absCurr] * -1;
+        }
+        // if it's negative, it's been seen, return it:
+        else {
+            return abs(a[i]);
+        }
+        
+    }
+
+    return duplicate;
+}
+
 
