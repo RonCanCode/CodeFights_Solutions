@@ -16,6 +16,8 @@
 
 // ([f(n - 1)] + ( ((n)*2) + ((n-2)*2) )
 
+// C++ Solution:
+
 int shapeArea(int n) {
     
     int area = 0;
