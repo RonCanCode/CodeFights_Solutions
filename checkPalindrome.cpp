@@ -8,6 +8,8 @@
 // checkPalindrome(inputString) = false;
 // For inputString = "a", the output should be
 // checkPalindrome(inputString) = true.
+// 
+// C++ Solution:
 
 bool checkPalindrome(std::string inputString) {
 
