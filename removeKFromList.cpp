@@ -18,27 +18,34 @@
 //   ListNode *next;
 // };
 
+// Definition for singly-linked list:
+// template<typename T>
+// struct ListNode {
+//   ListNode(const T &v) : value(v), next(nullptr) {}
+//   T value;
+//   ListNode *next;
+// };
+//
 ListNode<int> * removeKFromList(ListNode<int> * l, int k) {
 
-    // *1 is a pointer to start of list.
-    // **previousNextVal is a pointer
-    // pointing to the address of that pointer.
-    ListNode<int> ** previousNextVal = &l;
+    // Store the previous node's next value:
+    ListNode<int> ** previousNodesNext = &l;
     
-    for( ListNode<int> * current = l;
-        current != nullptr; 
-        current = current -> next ) {
+    // Iterate through the linked list:
+    for ( ListNode<int> * currentNode = l;
+        currentNode != nullptr;
+        currentNode = currentNode -> next) {
         
-            if( current -> value == k ) {
-                // Replace pointer of previous node:
-                *previousNextVal = current -> next;
-            }
-            else {
-                // Change address of variable '* current'
-                previousNextVal = &current -> next;
+        if (currentNode -> value == k) {
+            *previousNodesNext = currentNode -> next;
         }
+        else {
+            previousNodesNext = &currentNode -> next;
+        }
+        
     }
     
     return l;
 }
+
 
