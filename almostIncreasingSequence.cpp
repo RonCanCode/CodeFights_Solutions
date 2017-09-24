@@ -17,7 +17,7 @@
 // sequence [1, 2]. Alternately, you can remove 2 to get the strictly 
 // increasing sequence [1, 3].
 // 
-// C++ Solution:
+// C++ (almost) Solution...  Doesn't handle test case 34 (huge input).
 
 bool almostIncreasingSequence(std::vector<int> sequence) {
 
